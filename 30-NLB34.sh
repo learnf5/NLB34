@@ -7,6 +7,11 @@ until sudo scp /tmp/nginx-one-eval.crt nginx:/etc/ssl/nginx/nginx-repo.crt || ((
 until sudo scp /tmp/nginx-one-eval.key nginx:/etc/ssl/nginx/nginx-repo.key || (( count++ > 5 )); do sleep 5; done
 until sudo scp /tmp/nginx-one-eval.jwt nginx:/etc/nginx/license.jwt || (( count++ > 5 )); do sleep 5; done
 
+# Add nginx license to nginx2 lab system, required for keepalived setup
+sudo scp /tmp/nginx-one-eval.crt nginx2:/etc/ssl/nginx/nginx-repo.crt
+sudo scp /tmp/nginx-one-eval.key nginx2:/etc/ssl/nginx/nginx-repo.key
+sudo scp /tmp/nginx-one-eval.jwt nginx2:/etc/nginx/license.jwt
+
 # restart NGINX
 sudo ssh nginx sudo systemctl stop nginx
 sudo ssh nginx sudo systemctl start nginx
