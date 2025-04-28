@@ -7,11 +7,6 @@ curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.
 #### NEED TO GET NEW UPDATED R34 nginx.conf stuff like mgmt{} context
 sudo scp /tmp/nginx.conf nginx:/etc/nginx/LAB_nginx.conf
 
-# Add nginx license to nginx2 lab system, required for keepalived setup
-sudo scp /tmp/nginx-one-eval.crt nginx2:/etc/ssl/nginx/nginx-repo.crt
-sudo scp /tmp/nginx-one-eval.key nginx2:/etc/ssl/nginx/nginx-repo.key
-sudo scp /tmp/nginx-one-eval.jwt nginx2:/etc/nginx/license.jwt
-
 # This tcp directory created in lab 5, so it should carry on
 sudo ssh nginx mkdir /etc/nginx/tcp
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/$COURSE_ID/main/HA/tcp_lb.conf
