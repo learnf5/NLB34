@@ -16,3 +16,8 @@ sudo scp /tmp/tcp_lb.conf nginx:/etc/nginx/tcp
 curl --silent --remote-name-all --output-dir /tmp https://raw.githubusercontent.com/learnf5/$COURSE_ID/main/HA/hosts
 sudo scp /tmp/hosts nginx:/etc/hosts
 sudo scp /tmp/hosts nginx2:/etc/hosts
+
+# Add nginx license to nginx2 lab system, required for keepalived setup
+sudo scp /tmp/nginx-one-eval.crt nginx2:/etc/ssl/nginx/nginx-repo.crt
+sudo scp /tmp/nginx-one-eval.key nginx2:/etc/ssl/nginx/nginx-repo.key
+sudo scp /tmp/nginx-one-eval.jwt nginx2:/etc/nginx/license.jwt
