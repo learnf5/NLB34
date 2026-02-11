@@ -6,4 +6,4 @@ The **NGINX Server** is an Ubuntu Linux system with NGINX Plus installed. The NG
 
 The **Backend Server** is an Ubuntu Linux system with Docker installed to host 3 Containers configured with NGINX Web Server services.
 NGINX serves HTTP (.htm or .html) and PHP (.php) depending on the filename extension. 
-Additionally, the Backend server provides Telnet service on port 23. The configuration of these 3 NGINX containers is not the focus of this course, for the IP addresses 172.16.20.161, 162, and 163.
+Additionally, the Backend server provides Telnet service on port 23. The configuration of these 3 NGINX containers is not the focus of this course for the IP addresses 172.16.20.161, 162, and 163.
